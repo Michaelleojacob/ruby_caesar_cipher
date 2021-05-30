@@ -1,17 +1,11 @@
 def get_ord_values(x)
-    letters = x.split('')
-    numbers = letters.map{|letter| letter.ord}
-    return numbers
+    x.split('').map{|letter| letter.ord}
 end
 
 def lower_or_upper_case(numbers_array, shift_amount)
-    
     shift_amount = shift_amount % 26
-
     numbers_array.map do |number|
-
         number = number.to_i
-
         if number.between?(97,122)
             number = number + shift_amount
             if number > 122
@@ -45,8 +39,7 @@ def lower_or_upper_case(numbers_array, shift_amount)
 end
 
 def shifted_nums_back_to_letters(arr)
-    crypted = arr.map {|el| el.chr}
-    crypted.join("")
+    crypted = arr.map {|el| el.chr}.join("")
 end
 
 def caesar_cipher(string = "hello there General Kenobi", amount_to_shift = 5)
